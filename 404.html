@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Page not found</title>
+    <script>
+      (() => {
+        const legacyPrefix = "/TVToolkit";
+        const { pathname, search, hash } = window.location;
+
+        if (
+          pathname === legacyPrefix ||
+          pathname.startsWith(legacyPrefix + "/")
+        ) {
+          window.location.replace(
+            "/vestros" + pathname.slice(legacyPrefix.length) + search + hash
+          );
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <h1>Page not found</h1>
+    <p>The requested page does not exist.</p>
+    <p>
+      Visit the <a href="https://tiagosiebler.github.io/vestros/">VESTROS site</a>
+      or <a href="https://tiagosiebler.github.io/">return home</a>.
+    </p>
+  </body>
+</html>
